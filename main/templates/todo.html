@@ -3,13 +3,19 @@
 {% block title %} Your To-do {% endblock %}
 
 {% block body %}
-
-{% for x in todos%}
-<a href ="{{x}}">{{x}}</a>
-{% endfor %}
-<form method="post">
-    {% csrf_token %}
-    <p>{{form}}<button type="submit" name="create" value="create">Create new To-do</button></p>
-</form>
-
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/todo.css' %}">
+<div class="body">
+    <div class="list-group">
+        {% for x in todos%}
+        <p><a href ="{{x}}" class="list-group-item list-group-item-action list-group-item-primary" style="color: black;">{{x}}</a></p>
+        {% endfor %}
+    </div>
+    <div class="newTodo">
+        <form method="post">
+            {% csrf_token %}
+            <p>{{form.as_p}}<button type="submit" class="btn btn-primary" name="create" value="create">Create new To-do</button></p>
+        </form>
+    </div>
+</div>
 {% endblock %}

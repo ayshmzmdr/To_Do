@@ -1,0 +1,22 @@
+button {
+    width: 350px;
+    height: 40px;
+}
+
+.body {
+    background-image: radial-gradient(rgb(67,29,29), rgb(51, 9, 9), rgb(0, 0, 0));
+    border: 5px solid brown;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 631.9px;
+}
+.tasks {
+    color:antiquewhite;
+    font-size: 25px;
+}
+.newtask {
+    position: fixed;
+    bottom:10px;
+    right:10px;
+}

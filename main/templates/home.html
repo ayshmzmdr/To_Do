@@ -1,15 +1,18 @@
 {% extends "base.html" %}
 
 {% block title %} Welcome {% endblock %}
-
 {% block body %}
-
-Welcome!
-
-<form method="post">
-    {% csrf_token %}
-    <button type="submit" name="login" value="login" onclick="/login/">Login</button>
-    <button type="submit" name="signup" value="signup" onclick="/signup/">Sign Up</button>
-</form>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<div class="body">
+    <div class="head">
+    Welcome!
+    </div>
+    <form method="post" class="form">
+        {% csrf_token %}
+        <p><button type="submit" class="btn btn-success" name="login" value="login" onclick="/login/">Login</button></p>
+        <p><button type="submit" class="btn btn-success" name="signup" value="signup" onclick="/signup/">Sign Up</button></p>
+    </form>
+</div>
 
 {% endblock %}
