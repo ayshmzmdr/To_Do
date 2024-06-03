@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} Welcome {% endblock %}
+
+{% block body %}
+
+Welcome!
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" name="login" value="login" onclick="/login/">Login</button>
+    <button type="submit" name="signup" value="signup" onclick="/signup/">Sign Up</button>
+</form>
+
+{% endblock %}

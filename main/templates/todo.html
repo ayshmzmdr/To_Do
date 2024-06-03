@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} Your To-do {% endblock %}
+
+{% block body %}
+
+{% for x in todos%}
+<a href ="{{x}}">{{x}}</a>
+{% endfor %}
+<form method="post">
+    {% csrf_token %}
+    <p>{{form}}<button type="submit" name="create" value="create">Create new To-do</button></p>
+</form>
+
+{% endblock %}

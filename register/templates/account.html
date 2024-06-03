@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome {{user.username}}{% endblock %}
+
+{% block body %}
+<form method="get">
+    {%csrf_token%}
+    {{form}}
+    <button type="submit" name="ToDos" value="ToDos">Your To-do</button>
+</form>
+
+<form method="post" action="{% url 'logout' %}">
+    {%csrf_token%}
+    {{form}}
+    <button type="submit" name="logout" value="logout">Logout</button>
+</form>
+
+{% endblock %}

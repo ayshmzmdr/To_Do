@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Your To-do {% endblock %}
+
+{% block body %}
+{{mycheck}}
+<form method="post">
+    {% csrf_token %}
+    {% for x,y in display.items %}
+    {{x}} <input type="checkbox" name="task{{x}}" value="{{y}}" {% if y %}checked{%endif%}>
+    <p></p>
+    {%endfor%}
+    <button type="submit" name="updateTask" value="updateTask">Update Tasks</button>
+</form>
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" name="newTask" value="newTask">New Task</button>
+</form>
+{% endblock %}
