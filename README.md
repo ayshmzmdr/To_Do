@@ -1,6 +1,6 @@
 # To_Do
 
-A Django web application to create your own To-dos.
+A Web application to create your own To-dos.
 
 ## How to run the application?
 
