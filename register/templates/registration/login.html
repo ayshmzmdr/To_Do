@@ -1,14 +1,16 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% block title %} login {% endblock %}
-
 {% block body %}
-
-<form method="post">
-    {%csrf_token%}
-    {{form}}
-    Don't have an account? Sign up <a href="../signup/">here</a>
-    <button type="submit",name="login",value="login">Login</button>
-</form>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<div class="body">
+    <form method="post">
+        {%csrf_token%}
+        {{form|crispy}}
+        Don't have an account? Sign up <a href="../signup/">here</a>
+        <p></p><button type="submit" class="btn btn-primary" name="login" value="login">Login</button>
+    </form>
+</div>
 
 {% endblock %}

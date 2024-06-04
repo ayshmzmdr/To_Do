@@ -1,18 +1,23 @@
 {% extends "base.html" %}
 
 {% block title %}Welcome {{user.username}}{% endblock %}
-
 {% block body %}
-<form method="get">
-    {%csrf_token%}
-    {{form}}
-    <button type="submit" name="ToDos" value="ToDos">Your To-do</button>
-</form>
-
-<form method="post" action="{% url 'logout' %}">
-    {%csrf_token%}
-    {{form}}
-    <button type="submit" name="logout" value="logout">Logout</button>
-</form>
-
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+<div class="body">
+    <div class="yourTodo">
+        <form method="get">
+            {%csrf_token%}
+            {{form}}
+            <button type="submit" class="btn btn-success" name="ToDos" value="ToDos">Your To-do</button>
+        </form>
+    </div>
+    <div class="logout">
+        <form method="post" action="{% url 'logout' %}">
+            {%csrf_token%}
+            {{form}}
+            <button type="submit" class="btn btn-secondary" name="logout" value="logout">Logout</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
