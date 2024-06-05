@@ -26,7 +26,7 @@ Go to "Your To-do" to access your to-dos
 Remember to logout after having completed your session on the application
 
 ---
-### Create new To-do
+### Create new To-do Group
 Give your To-do a title for easy reference and click "Create new To-do" to create your to-do
 After you create your to-do, it appears along with your other to-dos on the screen. Click on a to-do to access that to-do's tasks
 

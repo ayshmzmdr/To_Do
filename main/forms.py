@@ -2,7 +2,7 @@ from django import forms
 
 class TodoForm(forms.Form):
     name = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'To-do name here','style':'width: 350px;height:50px;'}),
+        widget=forms.TextInput(attrs={'placeholder': 'To-do group name here','style':'width: 350px;height:50px;'}),
         max_length=150,
         label=""
     )
