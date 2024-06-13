@@ -1,8 +1,3 @@
-button {
-    width: 350px;
-    height: 40px;
-}
-
 .body {
     background-image: radial-gradient(rgb(67,29,29), rgb(51, 9, 9), rgb(0, 0, 0));
     border: 5px solid brown;
@@ -13,9 +8,14 @@ button {
 }
 .tasks {
     color:rgb(255, 255, 255);
-    font-size: 25px;
+    font-size: 22px;
 }
 .newtask {
+    position: fixed;
+    bottom:10px;
+    right:10px;
+}
+.delete {
     position: fixed;
     bottom:10px;
     right:10px;

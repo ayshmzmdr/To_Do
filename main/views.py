@@ -51,7 +51,7 @@ def tasktodo(response,name):
 
         elif response.POST.get("updateTask"):
             for x in display.keys():
-                doneTask=tasks.objects.get(todoName=temp,task=x)
+                doneTask=tasks.objects.get(todoName=temp,task=x)                
                 tempData=f"task{x}"
                 mycheck=response.POST.get(tempData)
                 if mycheck=="False":
@@ -63,6 +63,14 @@ def tasktodo(response,name):
                     display[x]=doneTask.status
                     doneTask.save()
             return redirect(response.path_info)
+        elif response.POST.get("delete"):
+            temp.delete()
+            return redirect("../")
+        for x in display.keys():
+            deleteTask=tasks.objects.get(todoName=temp,task=x)
+            if response.POST.get(f"deleteTask{x}"):
+                deleteTask.delete()
+                return redirect(response.path_info)
     else:
         form=TaskForm()  
     return render(response,"tasks.html",{"form":form,"display":display})
