@@ -4,7 +4,7 @@ A Web application to create your own To-dos.
 
 ## How to run the application?
 
-Go to Command Prompt, change your directory to this folder and then type `python manage.py runserver`
+Go to your terminal, change your directory to this folder and then type `python manage.py runserver`
 
 A localhost link will be generated. `CTRL+Left click` the link OR `copy and paste` the link in your browser. You will be sent to the home page of the application
 
